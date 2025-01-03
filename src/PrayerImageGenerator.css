@@ -1,0 +1,255 @@
+.prayer-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #e1f5fe, #b3e5fc);
+}
+
+@media (min-width: 768px) {
+  .prayer-container {
+    max-width: 500px;
+    padding: 2rem;
+  }
+}
+
+.prayer-title {
+  color: #1d1d1f;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.prayer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.prayer-input {
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  height: 600px;  /* 높이 증가 */
+  padding: 2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-height: 400px;  /* 최소 높이 증가 */
+  max-height: 800px;  /* 최대 높이 증가 */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.prayer-input:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 6px 12px rgba(0, 122, 255, 0.1);
+}
+
+.verse-input {
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.prayer-card {
+  width: 100%;
+  max-width: 500px;
+  min-height: 1100px;  /* 높이 증가 */
+  padding: 2rem 1rem 4rem; /* 하단 패딩 증가 */
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* space-between에서 flex-start로 변경 */
+  box-sizing: border-box;
+  background-size: cover;  /* contain에서 cover로 변경 */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(225, 245, 254, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  position: relative;
+  overflow: hidden;  /* 이미지가 영역을 벗어나지 않도록 설정 */
+}
+
+.prayer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: var(--bg-opacity, 0.7);  /* CSS 변수로 투명도 제어 */
+  z-index: 0;
+}
+
+.verse-text,
+.prayer-text,
+.credit-text {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);  /* 텍스트 가독성을 위한 반투명 배경 */
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.verse-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1rem; /* 좌우 패딩 감소 */
+  border-bottom: 1px solid #eee;
+  max-width: 100%;  /* 최대 너비 제한 제거 */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  width: calc(100% - 1rem); /* 좌우 여백 감소 */
+  margin: 1rem auto 1.5rem;
+  transition: font-size 0.3s ease;
+}
+
+.prayer-text {
+  width: calc(100% - 1rem); /* 좌우 여백 감소 */
+  min-height: 0; /* min-height 제거 */
+  height: auto; /* 높이 자동 조정 */
+  margin: 1rem auto;
+  padding: 1.5rem 1rem; /* 좌우 패딩 감소 */
+  max-width: 100%;  /* 최대 너비 제한 제거 */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* center에서 flex-start로 변경 */
+  flex-grow: 1; /* 남은 공간 차지 */
+  overflow-y: visible; /* auto에서 visible로 변경 */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.credit-text {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #1a73e8;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  z-index: 1;
+  white-space: nowrap;
+  width: auto;  /* 너비 자동 조정 */
+}
+
+.download-button {
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.style-controls {
+  display: flex;
+  gap: 0.8rem; /* 컨트롤 간격 조정 */
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  max-width: 500px;
+}
+
+.style-controls select, 
+.style-controls input[type="color"] {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.style-controls input[type="color"] {
+  width: 50px;
+  height: 35px;
+}
+
+.background-select {
+  min-width: 120px;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.background-select:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.1);
+}
+
+.opacity-slider {
+  width: 100px;
+  height: 35px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.verse-text, 
+.prayer-text {
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 동적 여백 조정 제거 */
+@media screen and (max-height: 800px) {
+  .prayer-card {
+    margin: 1rem auto;
+  }
+}
