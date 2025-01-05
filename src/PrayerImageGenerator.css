@@ -27,14 +27,23 @@
   gap: 2rem;
 }
 
+.text-input-container {
+  width: 100%;
+  max-width: 500px;  /* prayer-card와 동일한 max-width */
+  margin: 0 auto;
+}
+
 .prayer-input {
-  width: calc(100% - 2rem);
-  max-width: 500px;
+  width: 100%;
+  max-width: 500px;  /* prayer-card와 동일한 max-width */
+  min-height: 200px;
+  padding: 15px;
+  margin: 20px auto;
+  font-size: 16px;
+  line-height: 1.5;
   height: 600px;  /* 높이 증가 */
-  padding: 2rem;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
-  font-size: 1rem;
   font-family: inherit;
   resize: vertical;
   background-color: white;
@@ -42,7 +51,6 @@
   transition: all 0.3s ease;
   min-height: 400px;  /* 최소 높이 증가 */
   max-height: 800px;  /* 최대 높이 증가 */
-  line-height: 1.6;
   margin-bottom: 2rem;
 }
 
@@ -53,8 +61,8 @@
 }
 
 .verse-input {
-  width: calc(100% - 2rem);
-  max-width: 500px;
+  width: 100%;
+  max-width: 500px;  /* prayer-card와 동일한 max-width */
   padding: 1rem;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
@@ -251,5 +259,101 @@
 @media screen and (max-height: 800px) {
   .prayer-card {
     margin: 1rem auto;
+  }
+}
+
+/* 모바일 반응형 스타일 추가 */
+@media screen and (max-width: 480px) {
+  .prayer-container {
+    padding: 0.5rem;
+  }
+
+  .prayer-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .prayer-card {
+    min-height: calc(100vh - 150px);
+    padding: 1.5rem 1rem 3rem;
+    margin: 1rem auto;
+  }
+
+  .prayer-input {
+    height: 400px;
+    min-height: 300px;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .verse-input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .style-controls {
+    padding: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .style-controls select,
+  .background-select {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    min-width: auto;
+  }
+
+  .opacity-slider {
+    width: 80px;
+    height: 30px;
+  }
+
+  .text-input-container,
+  .prayer-input,
+  .verse-input,
+  .prayer-card {
+    width: 95%;  /* 모바일에서는 좀 더 넓게 사용 */
+    max-width: none;
+  }
+}
+
+/* 태블릿 반응형 스타일 추가 */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .prayer-container {
+    padding: 1rem;
+  }
+
+  .prayer-card {
+    min-height: calc(100vh - 200px);
+  }
+
+  .style-controls {
+    gap: 0.6rem;
+  }
+}
+
+/* iPhone SE 등 작은 화면 대응 */
+@media screen and (max-width: 375px) {
+  .prayer-title {
+    font-size: 1.5rem;
+  }
+
+  .style-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .style-controls select,
+  .background-select,
+  .opacity-slider {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 가로 모드 대응 */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .prayer-card {
+    min-height: 600px;
   }
 }

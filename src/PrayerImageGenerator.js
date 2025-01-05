@@ -120,13 +120,18 @@ function PrayerImageGenerator() {
           onChange={(e) => setVerse(e.target.value)}
           placeholder="말씀 묵상기도문 (성경구절)"
         />
-        <textarea
-          className="prayer-input"
-          value={prayer}
-          onChange={(e) => setPrayer(e.target.value)}
-          placeholder="당신의 기도를 입력해주세요... (최대 800자)"
-          maxLength={800}
-        />
+        <div className="text-input-container">
+          <textarea
+            className="prayer-input"
+            value={prayer}
+            onChange={(e) => setPrayer(e.target.value)}
+            maxLength={1000}
+            placeholder="기도문을 입력하세요 (최대 1000자)..."
+          />
+          <div className="character-count">
+            {prayer.length}/1000
+          </div>
+        </div>
         <div id="prayer-card" className="prayer-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${backgroundImage})`, '--bg-opacity': opacity }}>
           {verse && <div className="verse-text" style={textStyle}>{verse}</div>}
           <div className="prayer-text" style={textStyle}>{prayer}</div>

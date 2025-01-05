@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# 기도문 이미지 생성기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+기도문을 이미지로 변환하여 저장할 수 있는 웹 애플리케이션입니다.
+
+## 주요 기능
+
+- 기도문 텍스트 입력
+- 성경구절 입력
+- 글자 크기, 색상, 정렬 조정
+- 배경 이미지 선택
+- 배경 투명도 조정
+- 이미지 저장
+
+## 설치 및 실행
+
+```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm start
+```
 
 ## Available Scripts
 
