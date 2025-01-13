@@ -29,19 +29,24 @@
 
 .text-input-container {
   width: 100%;
-  max-width: 500px;  /* prayer-card와 동일한 max-width */
+  max-width: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .prayer-input {
-  width: 100%;
-  max-width: 500px;  /* prayer-card와 동일한 max-width */
+  width: calc(100% - 40px);
+  max-width: 460px;
   min-height: 200px;
   padding: 15px;
   margin: 20px auto;
   font-size: 16px;
   line-height: 1.5;
-  height: 600px;  /* 높이 증가 */
+  height: 600px;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-family: inherit;
@@ -49,9 +54,9 @@
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  min-height: 400px;  /* 최소 높이 증가 */
-  max-height: 800px;  /* 최대 높이 증가 */
-  margin-bottom: 2rem;
+  min-height: 400px;
+  max-height: 800px;
+  text-align: left;
 }
 
 .prayer-input:focus {
@@ -62,7 +67,7 @@
 
 .verse-input {
   width: 100%;
-  max-width: 500px;  /* prayer-card와 동일한 max-width */
+  max-width: 500px;
   padding: 1rem;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
@@ -76,14 +81,14 @@
 .prayer-card {
   width: 100%;
   max-width: 500px;
-  min-height: 1100px;  /* 높이 증가 */
-  padding: 2rem 1rem 4rem; /* 하단 패딩 증가 */
+  min-height: 1100px;
+  padding: 2rem 1rem 4rem;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* space-between에서 flex-start로 변경 */
+  justify-content: flex-start;
   box-sizing: border-box;
-  background-size: cover;  /* contain에서 cover로 변경 */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(225, 245, 254, 0.9);
@@ -93,7 +98,7 @@
   line-height: 1.6;
   white-space: pre-wrap;
   position: relative;
-  overflow: hidden;  /* 이미지가 영역을 벗어나지 않도록 설정 */
+  overflow: hidden;
 }
 
 .prayer-card::before {
@@ -107,7 +112,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: var(--bg-opacity, 0.7);  /* CSS 변수로 투명도 제어 */
+  opacity: var(--bg-opacity, 0.7);
   z-index: 0;
 }
 
@@ -116,7 +121,7 @@
 .credit-text {
   position: relative;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8);  /* 텍스트 가독성을 위한 반투명 배경 */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   padding: 0.5rem;
 }
@@ -126,33 +131,33 @@
   font-weight: 500;
   color: #444;
   margin-bottom: 1.5rem;
-  padding: 1.5rem 1rem; /* 좌우 패딩 감소 */
+  padding: 1.5rem 1rem;
   border-bottom: 1px solid #eee;
-  max-width: 100%;  /* 최대 너비 제한 제거 */
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   margin-top: 1rem;
   flex-shrink: 0;
   margin-bottom: 1rem;
-  width: calc(100% - 1rem); /* 좌우 여백 감소 */
+  width: calc(100% - 1rem);
   margin: 1rem auto 1.5rem;
   transition: font-size 0.3s ease;
 }
 
 .prayer-text {
-  width: calc(100% - 1rem); /* 좌우 여백 감소 */
-  min-height: 0; /* min-height 제거 */
-  height: auto; /* 높이 자동 조정 */
+  width: calc(100% - 1rem);
+  min-height: 0;
+  height: auto;
   margin: 1rem auto;
-  padding: 1.5rem 1rem; /* 좌우 패딩 감소 */
-  max-width: 100%;  /* 최대 너비 제한 제거 */
+  padding: 1.5rem 1rem;
+  max-width: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* center에서 flex-start로 변경 */
-  flex-grow: 1; /* 남은 공간 차지 */
-  overflow-y: visible; /* auto에서 visible로 변경 */
+  justify-content: flex-start;
+  flex-grow: 1;
+  overflow-y: visible;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   position: relative;
@@ -177,7 +182,7 @@
   text-decoration: none;
   z-index: 1;
   white-space: nowrap;
-  width: auto;  /* 너비 자동 조정 */
+  width: auto;
 }
 
 .download-button {
@@ -197,7 +202,7 @@
 
 .style-controls {
   display: flex;
-  gap: 0.8rem; /* 컨트롤 간격 조정 */
+  gap: 0.8rem;
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: white;
@@ -255,14 +260,12 @@
   word-break: break-word;
 }
 
-/* 동적 여백 조정 제거 */
 @media screen and (max-height: 800px) {
   .prayer-card {
     margin: 1rem auto;
   }
 }
 
-/* 모바일 반응형 스타일 추가 */
 @media screen and (max-width: 480px) {
   .prayer-container {
     padding: 0.5rem;
@@ -312,12 +315,11 @@
   .prayer-input,
   .verse-input,
   .prayer-card {
-    width: 95%;  /* 모바일에서는 좀 더 넓게 사용 */
+    width: 95%;
     max-width: none;
   }
 }
 
-/* 태블릿 반응형 스타일 추가 */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .prayer-container {
     padding: 1rem;
@@ -332,7 +334,6 @@
   }
 }
 
-/* iPhone SE 등 작은 화면 대응 */
 @media screen and (max-width: 375px) {
   .prayer-title {
     font-size: 1.5rem;
@@ -351,9 +352,18 @@
   }
 }
 
-/* 가로 모드 대응 */
 @media screen and (orientation: landscape) and (max-height: 600px) {
   .prayer-card {
     min-height: 600px;
   }
+}
+
+.character-count {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  text-align: right;
+  color: #666;
+  font-size: 0.9rem;
+  margin: -15px auto 0;
+  padding-right: 5px;
 }
