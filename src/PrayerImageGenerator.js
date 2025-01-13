@@ -125,11 +125,11 @@ function PrayerImageGenerator() {
             className="prayer-input"
             value={prayer}
             onChange={(e) => setPrayer(e.target.value)}
-            maxLength={1000}
-            placeholder="기도문을 입력하세요 (최대 1000자)..."
+            maxLength={3000}
+            placeholder="기도문을 입력하세요 (최대 3000자)..."
           />
           <div className="character-count">
-            {prayer.length}/1000
+            {prayer.length}/3000
           </div>
         </div>
         <div id="prayer-card" className="prayer-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${backgroundImage})`, '--bg-opacity': opacity }}>
