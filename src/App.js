@@ -6,7 +6,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>기도문 이미지 생성기</h1>
+      <h1>묵상 & 중보 기도 카드</h1>
       <div className="text-input-container">
         <textarea
           value={prayerText}

@@ -67,7 +67,7 @@ function PrayerImageGenerator() {
 
   return (
     <div className="prayer-container">
-      <h1 className="prayer-title">기도문 이미지 생성기</h1>
+      <h1 className="prayer-title">묵상 & 중보 기도 카드</h1>
       <div className="prayer-content">
         <div className="style-controls">
           <select 
