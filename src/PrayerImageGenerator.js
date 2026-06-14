@@ -34,6 +34,10 @@ function PrayerImageGenerator() {
 
   const handleDownload = () => {
     const element = document.getElementById('prayer-card');
+    if (!element) {
+      console.error('prayer-card element를 찾을 수 없습니다.');
+      return;
+    }
     const width = element.offsetWidth;
     const height = element.offsetHeight;
 
@@ -58,6 +62,9 @@ function PrayerImageGenerator() {
       link.download = 'prayer-card.png';
       link.href = canvas.toDataURL('image/png', 1.0);
       link.click();
+    }).catch((error) => {
+      console.error('이미지 저장에 실패했습니다:', error);
+      alert('이미지 저장에 실패했습니다. 다시 시도해주세요.');
     });
   };
 
@@ -67,7 +74,7 @@ function PrayerImageGenerator() {
 
   return (
     <div className="prayer-container">
-      <h1 className="prayer-title">묵상 & 중보 기도 카드</h1>
+      <h1 className="prayer-title">묵상 & 도고 기도문 카드</h1>
       <div className="prayer-content">
         <div className="style-controls">
           <select 
